@@ -1,0 +1,63 @@
+#body {
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .st0 {
+    fill: #ffa772;
+    stroke: #ffa772;
+    stroke-width: 0.25;
+    stroke-miterlimit: 10;
+
+    &:hover {
+      fill: #ff0000;
+      fill-opacity: 0.5;
+      stroke: #ff8080;
+      cursor: pointer;
+    }
+
+    stroke: #ff8080;
+  }
+  .st1 {
+    fill: #ff915e;
+    stroke: #ffa772;
+    stroke-width: 0.25;
+    stroke-miterlimit: 10;
+
+    &:hover {
+      fill: #ff0000;
+      fill-opacity: 0.5;
+      stroke: #ff8080;
+      cursor: pointer;
+    }
+  }
+
+  .st2 {
+    fill: #fa8b57;
+  }
+  .st3 {
+    fill: #fa8b57;
+    stroke: #ffa772;
+    stroke-width: 0.25;
+    stroke-miterlimit: 10;
+  }
+  .st4 {
+    fill: #5c5773;
+  }
+  .st5 {
+    fill: #ff9563;
+  }
+  .st6 {
+    fill: #ff774a;
+  }
+  .st7 {
+    display: none;
+    fill: #ff774a;
+  }
+  .st8 {
+    fill: none;
+  }
+}

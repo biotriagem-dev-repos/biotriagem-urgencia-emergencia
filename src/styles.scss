@@ -1,0 +1,103 @@
+@use "./variables" as *;
+
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  // font-weight: 400;
+  font-size: 16px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+// BUTTON
+.btn {
+  padding: 0;
+  margin: 0;
+  // text-transform: capitalize;
+  font-size: 15px;
+  display: inline-block;
+  transition: 0.3s ease;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-default {
+  color: #ffffff;
+  background: $background-color-header;
+
+  &:hover {
+    background-color: rgba(
+      $color: $background-color-header,
+      $alpha: 0.9
+    );
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: rgba(
+      $color: $background-color-header,
+      $alpha: 0.5
+    ) !important;
+  }
+}
+
+.btn-danger {
+  color: #ffffff;
+  background: $btn-danger-color;
+}
+
+.btn-warning {
+  color: #ffffff;
+  background: $btn-warning-color;
+}
+
+.btn-large {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.btn-small {
+  padding: 0.6rem 1rem;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+pre {
+  white-space: break-spaces;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.ng-toggle-switch-label {
+  font-weight: 400 !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.disable-pointer {
+  pointer-events: none;
+}
+
+.truncate {
+  white-space: nowrap; /* Mantém o texto em uma única linha */
+  overflow: hidden; /* Esconde o texto que exceder */
+  text-overflow: ellipsis; /* Adiciona os "..." no final */
+  width: 200px; /* Define a largura da div */
+  display: block; /* Faz o efeito funcionar */
+}

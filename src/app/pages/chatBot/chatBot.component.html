@@ -1,0 +1,30 @@
+<main class="main-content-wrap">
+  <section id="chat_wapper">
+    <app-header />
+    @defer (on idle) {
+    <!-- Se o usuário não aceitou o termo -->
+    @if(showPrivacyPolicy()) {
+    <section id="presentation">
+      <app-privacy-policy
+        (privacyPolicyOutput)="privacyPolicyAccepted($event)"
+      />
+    </section>
+    } @else {
+    <div id="chat_body">
+      @for (item of allConversation(); track item.id; let i = $index)
+      {
+      <app-message-left
+        [messageInput]="item"
+        [id]="item.id"
+        (resetChatEvent)="reset()"
+      />
+      }
+      <div #scrollAnchor></div>
+    </div>
+    }
+    <!-- <app-final-result /> -->
+    } @placeholder {
+    <app-loading-message />
+    }
+  </section>
+</main>

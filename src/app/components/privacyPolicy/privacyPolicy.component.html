@@ -1,0 +1,61 @@
+<header>
+  <h3>Política de Privacidade e dos Termos e Condições</h3>
+  <img src="assets/images/privacyPolicy/security.svg" alt="" />
+</header>
+
+<p>
+  Antes de usar essa avaliação, por favor leia os Termos e Condições e
+  lembre-se que:
+</p>
+
+<br />
+
+<ul>
+  <li>
+    Este rastreio de sintomas não é um diagnóstico, mas pode auxiliar
+    um médico a agilizar seu diagnóstico.
+  </li>
+  <li>
+    Em caso de emergências, ligue imediatamente para o número de
+    emergência local.
+  </li>
+  <li>Não faça automedicação. Siga as orientações do seu médico.</li>
+  <li>
+    Seus dados estão seguros. As informações que fornecer não serão
+    compartilhadas ou usadas para identificá-lo.
+  </li>
+</ul>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-group">
+    <input
+      type="checkbox"
+      id="accept1"
+      name="accept1"
+      required
+      formControlName="accept1"
+    />
+    <label for="accept1"> Li e aceito o Termos do Serviço.</label>
+  </div>
+
+  <div class="form-group">
+    <input
+      type="checkbox"
+      id="accept2"
+      name="accept2"
+      required
+      formControlName="accept2"
+    />
+    <label for="accept2">
+      Concordo que as minhas informações de saúde sejam usadas para a
+      entrevista. Mais informações na Política de Privacidade.</label
+    >
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-default btn-large"
+    [disabled]="form.invalid"
+  >
+    Continuar
+  </button>
+</form>

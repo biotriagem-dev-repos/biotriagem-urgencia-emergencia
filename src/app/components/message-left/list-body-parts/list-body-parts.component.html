@@ -1,0 +1,11 @@
+@for (option of messageInput().options; track option.id; let idxOption
+= $index) {
+<div
+  class="body-part"
+  (click)="sendUserMessage(option)"
+  [ngClass]="{ disabled: showOption() }"
+>
+  <img [src]="option.image" alt="" />
+  <span>{{ option.text }}</span>
+</div>
+}

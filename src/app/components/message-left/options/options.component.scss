@@ -1,0 +1,178 @@
+@use "variables" as *;
+
+:host {
+  display: block;
+  width: 100%;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin: 0.5rem 0;
+
+    input[type="radio"] {
+      accent-color: $background-color-header;
+      min-width: 25px;
+      width: 25px;
+      min-height: 25px;
+      height: 25px;
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.2rem;
+      padding: 0.5rem;
+      cursor: pointer;
+
+      span {
+        flex: 1;
+      }
+
+      .avatar {
+        display: flex;
+        margin-right: 1rem;
+        height: 30px;
+      }
+
+      .option_wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .option {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .sub_option {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-left: 25px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.checked {
+        background-color: rgba(
+          $color: $background-color-header,
+          $alpha: 0.2
+        );
+      }
+    }
+  }
+
+  .rating {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+
+    .face,
+    .face-icon {
+      display: flex;
+      flex-direction: row;
+      // flex-wrap: wrap;
+      width: 100%;
+    }
+
+    @for $i from 0 through 4 {
+      .face-icon-#{$i} {
+        flex: 1;
+        height: 45px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        outline: 3px solid #ffffff;
+      }
+    }
+
+    .face-icon-0 {
+      background-color: #82cb85;
+      background-image: url("/assets/images/rating/face-4.png");
+    }
+
+    .face-icon-1 {
+      background-color: #e3c92f;
+      background-image: url("/assets/images/rating/face-3.png");
+    }
+
+    .face-icon-2 {
+      background-color: #de942c;
+      background-image: url("/assets/images/rating/face-2.png");
+    }
+
+    .face-icon-3 {
+      background-color: #c54c20;
+      background-image: url("/assets/images/rating/face-1.png");
+    }
+
+    .face-icon-4 {
+      background-color: #b71f1c;
+      background-image: url("/assets/images/rating/face-0.png");
+    }
+
+    @for $i from 0 through 9 {
+      .face-#{$i} {
+        flex: 1;
+        // min-width: 50px;
+        height: 45px;
+        cursor: pointer;
+        margin: 1rem 0 0 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        outline: 3px solid #ffffff;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          transform: scale(1.07);
+        }
+
+        &.activeSpan {
+          transform: scale(1.07);
+        }
+      }
+    }
+
+    .face-8,
+    .face-9 {
+      background-color: #b71f1c;
+      // background-image: url("/assets/images/rating/face-0.png");
+    }
+
+    .face-6,
+    .face-7 {
+      background-color: #c54c20;
+      // background-image: url("/assets/images/rating/face-1.png");
+    }
+
+    .face-4,
+    .face-5 {
+      background-color: #de942c;
+      // background-image: url("/assets/images/rating/face-2.png");
+    }
+
+    .face-2,
+    .face-3 {
+      background-color: #e3c92f;
+      // background-image: url("/assets/images/rating/face-3.png");
+    }
+
+    .face-0,
+    .face-1 {
+      background-color: #82cb85;
+      // background-image: url("/assets/images/rating/face-4.png");
+    }
+  }
+}

@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  margin-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  .body-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 130px;
+    width: 130px;
+
+    // padding: 1rem;
+
+    span {
+      margin: 0.5rem 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+
+  .disabled {
+    pointer-events: none;
+  }
+}

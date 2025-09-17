@@ -1,0 +1,78 @@
+<ul>
+  @for (option of messageInput().options; track option.id; let
+  idxOption = $index) {
+  <li
+    [ngClass]="{
+      'checked': option.selected,
+      'disable-pointer': option?.disabled
+    }"
+    [ngStyle]="{
+      'background-color': getBackgroundColor(option),
+      color: option.textColor,
+      'font-weight': option.fontWeight
+    }"
+  >
+    <div class="option_wrapper">
+      <div
+        class="option"
+        (click)="sendNewUserMessage(option)"
+      >
+        <input
+          type="radio"
+          [checked]="option.selected"
+          [disabled]="option?.disabled"
+        />
+
+        @if(option.icon) {
+
+        <img
+          class="avatar"
+          src="assets/images/rating/{{ option.icon }}"
+          alt="Face"
+        />
+        }
+
+        <span>{{ option.text }}</span>
+      </div>
+      @if(option.selected && option.subOption) {
+      <ul>
+        @for (item of option.subOption; track item.id; let idxItem =
+        $index) {
+        <li
+          [ngClass]="{
+            'checked': option.selected,
+            'disable-pointer': option?.disabled
+          }"
+        >
+          <div
+            class="option_wrapper"
+            (click)="sendNewUserMessage(item)"
+          >
+            <div class="option">
+              <input
+                type="radio"
+                [name]="'radio-sub-' + option.id"
+                [checked]="item.selected"
+                [disabled]="option?.disabled"
+              />
+              {{ item.text }}
+            </div>
+          </div>
+        </li>
+        }
+      </ul>
+      }
+    </div>
+  </li>
+  }
+  <!-- Se não for multipleOptions, enviar a mensagem direto sem utilizar um botão -->
+  @if(showButton()) {
+  <button
+    type="button"
+    class="btn btn-default btn-small"
+    (click)="sendSelectedOptions(false)"
+  >
+    Enviar
+  </button>
+  }
+</ul>

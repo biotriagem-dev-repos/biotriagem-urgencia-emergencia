@@ -1,0 +1,46 @@
+<div class="result-header">
+  <h3>
+    Diagnósticos prováveis com base nos sintomas relatados pelo
+    paciente
+  </h3>
+  <fa-icon [icon]="faFileMedicalAlt" size="2x"></fa-icon>
+</div>
+<div class="result-answer">
+  <h4>Sintomas identificados</h4>
+  <ul>
+    @for (item of result_array; track $index) {
+    <li>
+      <fa-icon [icon]="faSyringe"></fa-icon>
+      {{ item }}
+    </li>
+    }
+  </ul>
+</div>
+<div class="result-conditions">
+  <h4>Condições possíveis</h4>
+  <p>
+    Seus sintomas relatados, a avaliação da enfermagem e os dados
+    fisiológicos aferidos estão relacionados às principais
+    possibilidades a serem confirmadas pela avaliação médica.
+  </p>
+
+  <!-- <div class="result-form">
+    <h4>Observações</h4>
+    <textarea name="" id="" rows="5"></textarea>
+  </div> -->
+
+  @if(!loading()) {
+  <div class="wrapper-result">
+    {{ resultGPT() }}
+
+    <button type="button" class="btn btn-small btn-default" (click)="reset()">
+      Voltar ao início
+    </button>
+  </div>
+  } @else {
+  <div class="loading">
+    <p>Analisando sintomas</p>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  }
+</div>

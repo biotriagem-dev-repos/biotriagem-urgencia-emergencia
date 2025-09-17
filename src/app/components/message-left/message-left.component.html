@@ -1,0 +1,31 @@
+<div id="profile">
+  <img
+    alt="Profile"
+    src="assets/images/profile/doctor2.png"
+    id="avatar"
+  />
+</div>
+
+@defer (on idle) { @let message = messageInput();
+<div class="message-left">
+  @if (message.text) {
+  <div class="message">
+    <pre>{{ message.text | variable }}</pre>
+  </div>
+  } @switch (message.type) { @case ("option") {
+  <app-options [messageInput]="message" />
+  } @case ("body_parts") {
+  <app-list-body-parts [messageInput]="message" />
+  }@case ("form") {
+  <app-form [messageInput]="message" />
+  } @case ("avatar") {
+  <app-human-body-full [messageInput]="message" />
+  } @case ("final_result") {
+  <app-final-result (resetChatEvent)="reset()" />
+  } }
+</div>
+} @placeholder {
+<div class="message-left">
+  <div class="message">Carregando...</div>
+</div>
+}

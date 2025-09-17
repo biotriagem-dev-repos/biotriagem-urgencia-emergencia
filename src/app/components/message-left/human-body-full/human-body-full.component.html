@@ -1,0 +1,35 @@
+<div class="svg-container">
+  @switch (avatar()) { @case ('Feminino') {
+  <app-human-woman-full
+    #svgRef
+    [ngClass]="{ disabled: showOption() }"
+    (disableSVG)="disableSVG($event)"
+    [messageInput]="messageInput()"
+  />
+  <!-- } @case ('CabeçaFeminino') {
+  <app-female-human-head
+    #svgRef
+    (disableSVG)="disableSVG($event)"
+    [messageInput]="messageInput()"
+  />
+  } @case ('fullBodyMasculino') {
+  <app-human-man-full
+    #svgRef
+    [ngClass]="{ disabled: showOption() }"
+    (disableSVG)="disableSVG($event)"
+    [messageInput]="messageInput()"
+  />} @case ('CabeçaMasculino') {
+  <app-man-human-head
+    #svgRef
+    (disableSVG)="disableSVG($event)"
+    [messageInput]="messageInput()"
+  /> -->
+  } @default {
+  <app-human-man-full
+    #svgRef
+    [ngClass]="{ disabled: showOption() }"
+    (disableSVG)="disableSVG($event)"
+    [messageInput]="messageInput()"
+  />
+  } }
+</div>
