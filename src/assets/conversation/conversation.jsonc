@@ -505,7 +505,7 @@
           "value": "Seio Frontal",
           "selected": false,
           "image": "assets/images/body_parts/seioFrontalFeminino.png",
-          "next": "seioFrontal1",
+          "next": "seioFrontalSinusite1",
           "resultMessage": "O paciente relata dor na região do seio frontal na cabeça."
         }
       ],
@@ -580,7 +580,7 @@
           "value": "Seio Frontal",
           "selected": false,
           "image": "assets/images/body_parts/seioFrontalMasculino.png",
-          "next": "seioFrontal1",
+          "next": "seioFrontalSinusite1",
           "resultMessage": "O paciente relata dor na região do seio frontal na cabeça."
         }
       ],
@@ -1843,6 +1843,285 @@
       "direction": "left",
       "userResponse": true,
       "variableName": "seioFrontalPalpacao",
+      "sender": "bot"
+    },
+    // CABEÇA SEIO FRONTAL - SINUSITE
+    {
+      "id": "seioFrontalSinusite1",
+      "type": "option",
+      "text": "Sobre a dor:",
+      "multipleOptions": false,
+      "options": [
+        {
+          "id": "1a",
+          "text": "Pressão na região abaixo dos olhos (bochechas) ou na testa",
+          "value": "pressao_abaixo_olhos_ou_testa",
+          "selected": false,
+          "next": "seioFrontalSinusite2",
+          "resultMessage": "Pressão na região abaixo dos olhos (bochechas) ou na testa"
+        },
+        {
+          "id": "1b",
+          "text": "Leve ou moderada",
+          "value": "leve_moderada",
+          "selected": false,
+          "next": "seioFrontalSinusite2",
+          "resultMessage": "Dor leve ou moderada, comum em sinusite viral."
+        },
+        {
+          "id": "1c",
+          "text": "Intensa e localizada",
+          "value": "intensa_localizada",
+          "selected": false,
+          "next": "seioFrontalSinusite2",
+          "resultMessage": "Dor intensa e localizada, sugestiva de infecção bacteriana."
+        },
+        {
+          "id": "1d",
+          "text": "Dói, passa e volta",
+          "value": "intermitente",
+          "selected": false,
+          "next": "seioFrontalSinusite2",
+          "resultMessage": "Dor intermitente, pode ser um sinal de sinusite bacteriana."
+        },
+        {
+          "id": "1e",
+          "text": "Melhora com repouso",
+          "value": "melhora_repouso",
+          "selected": false,
+          "next": "seioFrontalSinusite2",
+          "resultMessage": "Melhora da dor com repouso, frequentemente associada a quadros virais."
+        },
+        {
+          "id": "1f",
+          "text": "Continua (persistente)",
+          "value": "persistente",
+          "selected": false,
+          "next": "seioFrontalSinusite2",
+          "resultMessage": "Dor persistente relatada."
+        }
+      ],
+      "direction": "left",
+      "userResponse": true,
+      "variableName": "tipoDorSinusite",
+      "sender": "bot"
+    },
+    {
+      "id": "seioFrontalSinusite2",
+      "type": "option",
+      "text": "A dor piora com algum desses movimentos? (Pode selecionar mais de uma opção)",
+      "multipleOptions": true,
+      "options": [
+        {
+          "id": "2a",
+          "text": "Com a movimentação",
+          "value": "movimentacao",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Dor piora com movimentação."
+        },
+        {
+          "id": "2b",
+          "text": "Ao pressionar a testa",
+          "value": "pressionar_testa",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Dor piora ao pressionar a testa."
+        },
+        {
+          "id": "2c",
+          "text": "Ao pressionar a maçã do rosto",
+          "value": "pressionar_maca",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Dor piora ao pressionar a maçã do rosto."
+        },
+        {
+          "id": "2d",
+          "text": "Inclinando a cabeça para baixo",
+          "value": "inclinar_cabeca",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Dor piora ao inclinar a cabeça."
+        },
+        {
+          "id": "2e",
+          "text": "Ao acordar",
+          "value": "ao_acordar",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Dor piora ao acordar."
+        },
+        {
+          "id": "2f",
+          "text": "Ao se deitar",
+          "value": "ao_se_deitar",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Dor piora ao se deitar."
+        }
+      ],
+      "direction": "left",
+      "userResponse": true,
+      "variableName": "pioraDorSinusite",
+      "next": "seioFrontalSinusite3",
+      "sender": "bot"
+    },
+    {
+      "id": "seioFrontalSinusite3",
+      "type": "option",
+      "text": "Quais outros sintomas você tem? (Pode selecionar mais de uma opção)",
+      "multipleOptions": true,
+      "options": [
+        {
+          "id": "3a",
+          "text": "Febre",
+          "value": "febre",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Febre relatada."
+        },
+        {
+          "id": "3b",
+          "text": "Febre ausente ou baixa",
+          "value": "febre_baixa",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Febre ausente ou baixa, comum em sinusite viral."
+        },
+        {
+          "id": "3c",
+          "text": "Febre alta e persistente",
+          "value": "febre_alta",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Febre alta e persistente, sugestiva de infecção bacteriana."
+        },
+        {
+          "id": "3d",
+          "text": "Nariz entupido",
+          "value": "nariz_entupido",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Nariz entupido relatado."
+        },
+        {
+          "id": "3e",
+          "text": "Secreção nasal espessa (amarela ou verde)",
+          "value": "secrecao_purulenta",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Secreção nasal purulenta, sugestiva de infecção bacteriana."
+        },
+        {
+          "id": "3f",
+          "text": "Secreção nasal clara e transparente",
+          "value": "secrecao_clara",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Secreção nasal clara, comum em sinusite viral."
+        },
+        {
+          "id": "3g",
+          "text": "Tosse que piora à noite com secreção",
+          "value": "tosse_noturna",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Tosse noturna com secreção relatada."
+        },
+        {
+          "id": "3h",
+          "text": "Diminuição do olfato",
+          "value": "diminuicao_olfato",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Diminuição do olfato relatada."
+        },
+        {
+          "id": "3i",
+          "text": "Cansaço",
+          "value": "cansaco",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Cansaço relatado."
+        },
+        {
+          "id": "3j",
+          "text": "Mal-estar geral",
+          "value": "mal_estar",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Mal-estar geral relatado."
+        },
+        {
+          "id": "3k",
+          "text": "Mau hálito",
+          "value": "mau_halito",
+          "selected": false,
+          "next": null,
+          "resultMessage": "Mau hálito relatado."
+        }
+      ],
+      "direction": "left",
+      "userResponse": true,
+      "variableName": "outrosSintomasSinusite",
+      "next": "seioFrontalSinusite4",
+      "sender": "bot"
+    },
+    {
+      "id": "seioFrontalSinusite4",
+      "type": "option",
+      "text": "Em relação à evolução dos sintomas, você diria que:",
+      "multipleOptions": false,
+      "options": [
+        {
+          "id": "4a",
+          "text": "Tem melhorado aos poucos",
+          "value": "melhora_progressiva",
+          "selected": false,
+          "next": "seioFrontalSinusite5",
+          "resultMessage": "Melhora gradual dos sintomas, sugestivo de sinusite viral."
+        },
+        {
+          "id": "4b",
+          "text": "Já duram mais de 10 dias e pioraram depois de uma melhora inicial",
+          "value": "sintomas_persistentes",
+          "selected": false,
+          "next": "seioFrontalSinusite5",
+          "resultMessage": "Sintomas persistentes ou piora tardia, sugestivo de infecção bacteriana."
+        }
+      ],
+      "direction": "left",
+      "userResponse": true,
+      "variableName": "evolucaoSintomas",
+      "sender": "bot"
+    },
+    {
+      "id": "seioFrontalSinusite5",
+      "type": "option",
+      "text": "Você já teve crises anteriores de sinusite ou foi diagnosticado com sinusite crônica?",
+      "multipleOptions": false,
+      "options": [
+        {
+          "id": "5a",
+          "text": "Sim",
+          "value": "sim",
+          "selected": false,
+          "next": "final_result",
+          "resultMessage": "Histórico de sinusite prévia relatado."
+        },
+        {
+          "id": "5b",
+          "text": "Não",
+          "value": "nao",
+          "selected": false,
+          "next": "final_result",
+          "resultMessage": "Sem histórico de sinusite prévia."
+        }
+      ],
+      "direction": "left",
+      "userResponse": true,
+      "variableName": "historicoSinusite",
       "sender": "bot"
     },
     // CABEÇA NARIZ

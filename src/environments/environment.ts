@@ -8,4 +8,6 @@ export const environment = {
     appId: '',
     measurementId: '',
   },
+  production: false,
+  gptKey: '',
 }
