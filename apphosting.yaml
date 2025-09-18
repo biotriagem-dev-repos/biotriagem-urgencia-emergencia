@@ -20,20 +20,23 @@ runConfig:
   # See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
   # - variable: API_KEY
   #   secret: myApiKeySecret
+server:
+  # O novo caminho de entrada do servidor
+  entrypoint: 'dist/chat/server/server.mjs'
 env:
   - variable: API_KEY
-    secret: API_KEY
+    secret: projects/chat-d23d1/secrets/API_KEY/versions/latest
   - variable: AUTH_DOMAIN
-    secret: AUTH_DOMAIN
+    secret: projects/chat-d23d1/secrets/AUTH_DOMAIN/versions/latest
   - variable: PROJECT_ID
-    secret: PROJECT_ID
+    secret: projects/chat-d23d1/secrets/PROJECT_ID/versions/latest
   - variable: STORAGE_BUCKET
-    secret: STORAGE_BUCKET
+    secret: projects/chat-d23d1/secrets/STORAGE_BUCKET/versions/latest
   - variable: MESSAGING_SENDER_ID
-    secret: MESSAGING_SENDER_ID
+    secret: projects/chat-d23d1/secrets/MESSAGING_SENDER_ID/versions/latest
   - variable: APP_ID
-    secret: APP_ID
+    secret: projects/chat-d23d1/secrets/APP_ID/versions/latest
   - variable: MEASUREMENT_ID
-    secret: MEASUREMENT_ID
+    secret: projects/chat-d23d1/secrets/MEASUREMENT_ID/versions/latest
   - variable: GPT_KEY
-    secret: GPT_KEY
+    secret: projects/chat-d23d1/secrets/GPT_KEY/versions/latest

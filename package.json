@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "pre-build": "node ./src/environments/set-env.js",
     "serve:ssr:chat": "LOCAL=true node dist/chat/server/server.mjs"
   },
   "private": true,
