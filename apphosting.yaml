@@ -6,17 +6,34 @@ runConfig:
   # concurrency: 80
   # cpu: 1
   # memoryMiB: 512
-# Environment variables and secrets.
-# env:
-# Configure environment variables.
-# See https://firebase.google.com/docs/app-hosting/configure#user-defined-environment.
-# - variable: MESSAGE
-#   value: Hello world!
-#   availability:
-#     - BUILD
-#     - RUNTIME
+  # Environment variables and secrets.
+  # env:
+  # Configure environment variables.
+  # See https://firebase.google.com/docs/app-hosting/configure#user-defined-environment.
+  # - variable: MESSAGE
+  #   value: Hello world!
+  #   availability:
+  #     - BUILD
+  #     - RUNTIME
 
-# Configure secrets
-# See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
-# - variable: API_KEY
-#   secret: myApiKeySecret
+  # Configure secrets
+  # See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
+  # - variable: API_KEY
+  #   secret: myApiKeySecret
+env:
+  - variable: API_KEY
+    secret: API_KEY
+  - variable: AUTH_DOMAIN
+    secret: AUTH_DOMAIN
+  - variable: PROJECT_ID
+    secret: PROJECT_ID
+  - variable: STORAGE_BUCKET
+    secret: STORAGE_BUCKET
+  - variable: MESSAGING_SENDER_ID
+    secret: MESSAGING_SENDER_ID
+  - variable: APP_ID
+    secret: APP_ID
+  - variable: MEASUREMENT_ID
+    secret: MEASUREMENT_ID
+  - variable: GPT_KEY
+    secret: GPT_KEY
