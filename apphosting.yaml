@@ -25,18 +25,18 @@ server:
   entrypoint: 'dist/chat/server/server.mjs'
 env:
   - variable: API_KEY
-    secret: projects/chat-d23d1/secrets/API_KEY/versions/latest
+    secret: projects/690958819735/secrets/API_KEY/versions/latest
   - variable: AUTH_DOMAIN
-    secret: projects/chat-d23d1/secrets/AUTH_DOMAIN/versions/latest
+    secret: projects/690958819735/secrets/AUTH_DOMAIN/versions/latest
   - variable: PROJECT_ID
-    secret: projects/chat-d23d1/secrets/PROJECT_ID/versions/latest
+    secret: projects/690958819735/secrets/PROJECT_ID/versions/latest
   - variable: STORAGE_BUCKET
-    secret: projects/chat-d23d1/secrets/STORAGE_BUCKET/versions/latest
+    secret: projects/690958819735/secrets/STORAGE_BUCKET/versions/latest
   - variable: MESSAGING_SENDER_ID
-    secret: projects/chat-d23d1/secrets/MESSAGING_SENDER_ID/versions/latest
+    secret: projects/690958819735/secrets/MESSAGING_SENDER_ID/versions/latest
   - variable: APP_ID
-    secret: projects/chat-d23d1/secrets/APP_ID/versions/latest
+    secret: projects/690958819735/secrets/APP_ID/versions/latest
   - variable: MEASUREMENT_ID
-    secret: projects/chat-d23d1/secrets/MEASUREMENT_ID/versions/latest
+    secret: projects/690958819735/secrets/MEASUREMENT_ID/versions/latest
   - variable: GPT_KEY
-    secret: projects/chat-d23d1/secrets/GPT_KEY/versions/latest
+    secret: projects/690958819735/secrets/GPT_KEY/versions/latest
